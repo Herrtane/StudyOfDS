@@ -154,7 +154,7 @@ int ArrayList<T>::InsertItem(T item) {
 			m_array[i] = m_array[i - 1];
 
 		m_array[location] = item;
-		length++;
+		m_length++;
 		return 1;
 	}
 
@@ -186,7 +186,7 @@ template <class T>
 int ArrayList<T>::RetrieveItem(T& item) {
 	int midPoint;
 	int first = 0;
-	int last = length - 1;
+	int last = m_length - 1;
 	bool found = false;
 
 	while ((first <= last) && !found) {
@@ -217,4 +217,5 @@ int ArrayList<T>::GetNextItem(T& item) {
 	if (m_currentPos == m_length)
 		return 0;
 	item = m_array[m_currentPos];
+	return 1;
 }
